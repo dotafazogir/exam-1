@@ -1,0 +1,1 @@
+repo2-svc      ClusterIP   10.233.57.154   <none>        80/TCP           54s

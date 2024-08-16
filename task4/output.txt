@@ -1,0 +1,13 @@
+deployment.apps/flask-app created
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+flask-app   1/1     1            1           6m24s
+NAME                        READY   STATUS    RESTARTS   AGE
+flask-app-6b9b47b79-khbds   1/1     Running   0          8m27s
+nginx1                      1/1     Running   0          27m
+nginx2                      1/1     Running   0          27m
+
+
+
+
+curl http://localhost:8090
+{"env":"staging","http_port":"80","string":"Welcome to DevOps Course!"}

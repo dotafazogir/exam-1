@@ -1,0 +1,2 @@
+kubectl  scale deploy repo-2 --replicas 3 -n exam-doston
+deployment.apps/repo-2 scaled

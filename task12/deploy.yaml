@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repo-4
+  namespace: exam-doston
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: repo-2
+  template:
+    metadata:
+      labels:
+        app: repo-2
+    spec:
+      containers:
+        - name: repo-2
+          image: dotafazogir/repo-2:v1
+          ports:
+            - containerPort: 80
+          env:
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: env
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: log_leveI
+            - name: DB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: database1
+                  key: DB_URI
+            - name: GRPC_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: grpc_port
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP

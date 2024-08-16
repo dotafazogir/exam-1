@@ -1,0 +1,2 @@
+kubectl expose deploy repo-2 -n exam-doston --port 80 --target-port 80 --name repo2-svc
+service/repo2-svc exposed

@@ -1,0 +1,3 @@
+kubectl  get svc -n exam-doston
+NAME        TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+flask-app   NodePort   10.233.9.33   <none>        8088:31492/TCP   36s

@@ -1,0 +1,1 @@
+ Liveness:  http-get http://:80/dnurmatov.nvrbckdown.uz/config delay=30s timeout=5s period=10s #success=1 #failure=3

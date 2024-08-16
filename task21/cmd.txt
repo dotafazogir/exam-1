@@ -1,0 +1,2 @@
+ kubectl  create -f job.yaml -n exam-doston
+cronjob.batch/ping created

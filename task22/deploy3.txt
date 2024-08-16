@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repo-2-2
+  namespace: exam-doston
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: repo-2
+  template:
+    metadata:
+      labels:
+        app: repo-2
+    spec:
+      containers:
+        - name: repo-2
+          image: dotafazogir/repo-2:v1
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: dnurmatov.nvrbckdown.uz/config
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+            successThreshold: 1
+          env:
+            - name: CPU
+              valueFrom:
+                resourceFieldRef:
+                  containerName: repo-2
+                  resource: requests.cpu
+            - name: MEMORY
+              valueFrom:
+                resourceFieldRef:
+                  containerName: repo-2
+                  resource: requests.memory
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: env
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: log_leveI
+            - name: DB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: database1
+                  key: DB_URI
+            - name: GRPC_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: info
+                  key: grpc_port
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP

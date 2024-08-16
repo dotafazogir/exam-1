@@ -1,0 +1,44 @@
+kubectl describe job ping-28730154 -n exam-doston
+Name:             ping-28730154
+Namespace:        exam-doston
+Selector:         batch.kubernetes.io/controller-uid=eed252b0-4b9e-4819-8d50-624542c30cfa
+Labels:           batch.kubernetes.io/controller-uid=eed252b0-4b9e-4819-8d50-624542c30cfa
+                  batch.kubernetes.io/job-name=ping-28730154
+                  controller-uid=eed252b0-4b9e-4819-8d50-624542c30cfa
+                  job-name=ping-28730154
+Annotations:      batch.kubernetes.io/cronjob-scheduled-timestamp: 2024-08-16T11:54:00Z
+Controlled By:    CronJob/ping
+Parallelism:      1
+Completions:      1
+Completion Mode:  NonIndexed
+Suspend:          false
+Backoff Limit:    6
+Start Time:       Fri, 16 Aug 2024 16:54:00 +0500
+Completed At:     Fri, 16 Aug 2024 16:54:06 +0500
+Duration:         6s
+Pods Statuses:    0 Active (0 Ready) / 1 Succeeded / 0 Failed
+Pod Template:
+  Labels:  batch.kubernetes.io/controller-uid=eed252b0-4b9e-4819-8d50-624542c30cfa
+           batch.kubernetes.io/job-name=ping-28730154
+           controller-uid=eed252b0-4b9e-4819-8d50-624542c30cfa
+           job-name=ping-28730154
+  Containers:
+   ping:
+    Image:      busybox
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /bin/sh
+      -c
+    Args:
+      for i in {1..4}; do ping -c 1 8.8.8.8; sleep 1; done
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Events:
+  Type    Reason            Age   From            Message
+  ----    ------            ----  ----            -------
+  Normal  SuccessfulCreate  49s   job-controller  Created pod: ping-28730154-pt88n
+  Normal  Completed         43s   job-controller  Job completed

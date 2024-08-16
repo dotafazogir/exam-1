@@ -1,0 +1,2 @@
+ kubectl create ing repo-2-ing --rule "dnurmatov.nvrbckdown.uz/*=repo2-svc:80" --class nginx -n exam-doston
+ingress.networking.k8s.io/repo-2-ing created

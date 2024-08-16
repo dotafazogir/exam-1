@@ -1,0 +1,1 @@
+ kubectl get  endpoints repo2-svc -n exam-doston -o yaml

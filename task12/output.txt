@@ -1,0 +1,2 @@
+kubectl apply -f deploy-2.yaml
+deployment.apps/repo-1 configured

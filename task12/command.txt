@@ -1,0 +1,1 @@
+kubectl create deployment repo-1 --image dotafazogir/repo-2:v1 -n exam-doston --dry-run=client -o yaml > deploy-2.yaml

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  annotations:
+    endpoints.kubernetes.io/last-change-trigger-time: "2024-08-16T11:31:05Z"
+  creationTimestamp: "2024-08-16T11:31:05Z"
+  labels:
+    app: repo-2
+  name: repo2-svc
+  namespace: exam-doston
+  resourceVersion: "7836032"
+  uid: aa164b74-017c-41c2-a394-750396c009bd
+subsets:
+- addresses:
+  - ip: 10.233.102.168
+    nodeName: node1
+    targetRef:
+      kind: Pod
+      name: repo-2-7dcf8b4dc-cpscp
+      namespace: exam-doston
+      uid: 6825d7c0-67eb-4e96-8252-cb5208d67c90
+  - ip: 10.233.74.104
+    nodeName: node4
+    targetRef:
+      kind: Pod
+      name: repo-2-7dcf8b4dc-tswz6
+      namespace: exam-doston
+      uid: 58ebcd67-db45-4411-b3cb-4e69c1dc8555
+  - ip: 10.233.75.30
+    nodeName: node2
+    targetRef:
+      kind: Pod
+      name: repo-2-7dcf8b4dc-s6m4n
+      namespace: exam-doston
+      uid: 1a7335a5-1214-4636-afe5-1fb02a4017a6
+  ports:
+  - port: 80
+    protocol: TCP

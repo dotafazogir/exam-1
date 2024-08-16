@@ -1,0 +1,1 @@
+kubectl  exec -it nginx1 -n exam-doston -- curl flask-app:8088/check-ingress

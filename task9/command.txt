@@ -1,0 +1,9 @@
+ kubectl expose deployment frontend-app --type=NodePort --name=frontend-app --port=80 --target-port=80 -n exam-doston
+service/frontend-app exposed
+
+
+kubectl get svc -n exam-doston
+NAME           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+flask-app      NodePort   10.233.9.33     <none>        8088:31492/TCP   134m
+flask-appp     NodePort   10.233.10.214   <none>        5000:32347/TCP   35m
+frontend-app   NodePort   10.233.42.189   <none>        80:31286/TCP     31s

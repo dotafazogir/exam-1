@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    project: practice
+    author: doston
+  name: nginx1
+  namespace: exam-doston
+spec:
+  containers:
+  - image: nginx
+    name: nginx1
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

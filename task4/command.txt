@@ -1,0 +1,4 @@
+kubectl  create deploy flask-app -n exam-doston --image=nvrbckdown/flask-app:v1 --dry-run=client -o yaml >task4.yaml
+
+
+ kubectl  port-forward pod/flask-app-6b9b47b79-khbds -n exam-doston 8090:5000

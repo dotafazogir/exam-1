@@ -1,0 +1,2 @@
+kubectl create -f deploy3.txt -n exam-doston
+deployment.apps/repo-2-2 created

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask-appp
+  name: flask-appp
+  namespace: exam-doston
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-appp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flask-appp
+    spec:
+      containers:
+      - image: nvrbckdown/flask-app:v1
+        name: flask-app
+        resources: {}
+status: {}

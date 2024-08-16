@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ping
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ping
+              image: busybox
+              command: ["/bin/sh", "-c"]
+              args:
+                - for i in {1..4}; do ping -c 1 8.8.8.8; sleep 1; done
+          restartPolicy: OnFailure

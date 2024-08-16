@@ -1,0 +1,2 @@
+ kubectl create -f  limit.yaml -n exam-doston
+limitrange/cpu-resource-constraint created

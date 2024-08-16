@@ -1,0 +1,2 @@
+kubectl  create -f deploy2.yaml  -n exam-doston
+deployment.apps/repo-22 created

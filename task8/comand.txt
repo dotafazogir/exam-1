@@ -1,0 +1,1 @@
+ kubectl apply -f fontend-app.yaml -n exam-doston
